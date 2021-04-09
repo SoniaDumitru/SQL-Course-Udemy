@@ -73,3 +73,13 @@ SELECT * FROM customer
 WHERE first_name ILIKE 'j%'
 AND last_name ILIKE '%S';
 
+SELECT DISTINCT(first_name) FROM customer
+WHERE first_name NOT ILIKE 'j%'
+AND last_name NOT ILIKE '%S'
+ORDER BY first_name;
+
+SELECT DISTINCT(first_name) FROM customer
+WHERE first_name LIKE 'A%'
+AND last_name LIKE 'B%'
+ORDER BY first_name;
+
