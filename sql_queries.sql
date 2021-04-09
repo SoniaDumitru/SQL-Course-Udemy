@@ -64,3 +64,12 @@ WHERE amount NOT IN (0.99, 1.98);
 
 SELECT * FROM customer
 WHERE first_name IN ('John', 'Julie');
+
+-- LIKE & ILIKE for pattern matching: % sequence and _ for any single char
+SELECT * FROM customer
+WHERE first_name LIKE 'J%';
+
+SELECT * FROM customer
+WHERE first_name ILIKE 'j%'
+AND last_name ILIKE '%S';
+
