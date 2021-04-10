@@ -83,3 +83,18 @@ WHERE first_name LIKE 'A%'
 AND last_name LIKE 'B%'
 ORDER BY first_name;
 
+-- All combined
+SELECT COUNT(amount) FROM payment WHERE amount > 5;
+
+SELECT COUNT(*) FROM actor WHERE first_name LIKE 'P%';
+
+SELECT COUNT(DISTINCT(district)) FROM address;
+
+SELECT DISTINCT(district) FROM address;
+
+SELECT COUNT(*) FROM film 
+WHERE rating = 'R' AND replacement_cost 
+BETWEEN 5 AND 15;
+
+SELECT COUNt(*) FROM film
+WHERE title LIKE '%Truman%';
