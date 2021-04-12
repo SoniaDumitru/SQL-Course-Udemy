@@ -47,4 +47,7 @@ SELECT DATE(payment_date), SUM(amount) FROM payment
 GROUP BY DATE(payment_date)
 ORDER BY SUM(amount) DESC;
 
+SELECT staff_id, COUNT(*) FROM payment
+GROUP BY staff_id;
+
 
