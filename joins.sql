@@ -39,3 +39,9 @@ SELECT film.film_id, title, inventory_id, store_id
 FROM inventory
 RIGHT JOIN film ON 
 inventory.film_id = film.film_id;
+
+-- INNER JOIN 
+SELECT email, customer.address_id FROM customer
+INNER JOIN address 
+ON customer.address_id = address.address_id
+WHERE district = 'California';
