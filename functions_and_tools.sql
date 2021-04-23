@@ -25,6 +25,9 @@ EXTRACT(YEAR FROM date_col);
 SELECT EXTRACT(YEAR FROM payment_date) AS my_year
 FROM payment; 
 
+SELECT COUNT(*) FROM payment
+WHERE EXTRACT(dow FROM payment_date) = 1;
+
 -- AGE()
 AGE(date_col);
 
@@ -34,5 +37,9 @@ FROM payment;
 -- TO_CHAR()
 SELECT TO_CHAR(payment_date, 'MON+YYYY') AS age
 FROM payment; 
+
+SELECT DISTINCT (TO_CHAR(payment_date, 'MONTH')) FROM payment;
+
+
 
 
