@@ -16,3 +16,23 @@ SELECT NOW();
 SELECT TIMEOFDAY();
 SELECT CURRENT_TIME;
 SELECT CURRENT_DATE;
+
+-- EXTRACT INFO FROM A TIME BASED DATA TYPE
+
+-- EXTRACT() a subcomponent of a date value
+EXTRACT(YEAR FROM date_col);
+
+SELECT EXTRACT(YEAR FROM payment_date) AS my_year
+FROM payment; 
+
+-- AGE()
+AGE(date_col);
+
+SELECT AGE(payment_date) AS age
+FROM payment; 
+
+-- TO_CHAR()
+SELECT TO_CHAR(payment_date, 'MON+YYYY') AS age
+FROM payment; 
+
+
