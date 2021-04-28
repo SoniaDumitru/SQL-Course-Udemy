@@ -20,3 +20,17 @@ FROM rental
 INNER JOIN inventory ON inventory.inventory_id = rental.inventory_id
 WHERE return_date BETWEEN '2005-05-29' AND '2005-06-30')
 ORDER BY title;
+
+-- return first and last name for people that have made a payment > 11 with EXISTS
+SELECT first_name, last_name FROM customer as c
+WHERE EXISTS
+(SELECT * FROM payment AS p 
+-- checking if the customer made at least one payment
+WHERE c.customer_id = p.customer_id 
+AND p.amount > 11);
+
+-- return first and last name for people that have made a payment > 11 with INNER JOIN 
+SELECT first_name, last_name FROM customer as c
+INNER JOIN payment AS p
+ON c.customer_id = p.customer_id
+AND p.amount > 11;
