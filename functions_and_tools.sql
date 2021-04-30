@@ -39,7 +39,3 @@ SELECT TO_CHAR(payment_date, 'MON+YYYY') AS age
 FROM payment; 
 
 SELECT DISTINCT (TO_CHAR(payment_date, 'MONTH')) FROM payment;
-
-
-
-
