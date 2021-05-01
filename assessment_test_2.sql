@@ -57,4 +57,20 @@ GROUP BY facid
 HAVING SUM(slots) > 1000 -- HAVING needs to be used for agregate functions
 ORDER BY SUM(slots);
 
-13. 
+-- 13. How can you produce a list of the start times for bookings for tennis courts, for the date '2012-09-21'? Return a list of start time and facility name pairings, ordered by the time.
+SELECT cd.bookings.starttime, cd.facilities.name
+FROM cd.facilities
+INNER JOIN cd.bookings
+ON cd.facilities.facid = cd.bookings.facid
+WHERE cd.facilities.facid IN (0,1)
+AND cd.bookings.starttime >= '2012-09-21'
+AND cd.bookings.starttime < '2012-09-22'
+ORDER BY cd.bookings.starttime;
+
+-- 14. How can you produce a list of the start times for bookings by members named 'David Farrell'?
+SELECT cd.bookings.starttime
+FROM cd.bookings
+INNER JOIN cd.members ON
+cd.members.memid = cd.bookings.memid
+WHERE cd.members.firstname = 'David'
+AND cd.members.surname = 'Farrell';
