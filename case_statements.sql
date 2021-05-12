@@ -14,7 +14,7 @@ CASE
 END AS customer_class
 FROM customer;
 
--- CASE expression
+-- CASE expressions
 SELECT customer_id,
 CASE customer_id
 	WHEN 2 THEN 'Winner'
@@ -22,4 +22,21 @@ CASE customer_id
 	ELSE 'Normal'
 	END raffle_results
 FROM customer;
+
+
+-- Return rental_rate next to a column with 0 and 1
+SELECT rental_rate,
+CASE rental_rate 
+	WHEN 0.99 THEN 1
+	ELSE 0 
+END
+FROM film;
+
+-- sum all movies 
+SELECT
+SUM(CASE rental_rate 
+	WHEN 0.99 THEN 1
+	ELSE 0 
+END) AS films_with_ninty_nine
+FROM film;
 
