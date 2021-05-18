@@ -32,7 +32,7 @@ CASE rental_rate
 END
 FROM film;
 
--- sum all movies 
+-- Sum all movies 
 SELECT
 SUM(CASE rental_rate 
 	WHEN 0.99 THEN 1
@@ -40,3 +40,34 @@ SUM(CASE rental_rate
 END) AS films_with_ninty_nine
 FROM film;
 
+-- Return 3 columns with counting how many movies are 1.99, 2.99, 4.99
+SELECT
+SUM(CASE rental_rate 
+	WHEN 0.99 THEN 1
+	ELSE 0 
+END) AS bargains,
+SUM(CASE rental_rate
+	WHEN 2.99 THEN 1
+	ELSE 0
+END) AS regular,
+SUM(CASE rental_rate 
+	WHEN 4.99 THEN 1
+	ELSE 0 
+END) AS premium
+FROM film;
+
+-- Return 3 columns of movies by rate
+SELECT
+SUM(CASE rating 
+	WHEN 'R' THEN 1
+	ELSE 0 
+END) AS r,
+SUM(CASE rating
+	WHEN 'PG' THEN 1
+	ELSE 0
+END) AS pg,
+SUM(CASE rating 
+	WHEN 'PG-13' THEN 1
+	ELSE 0 
+END) AS pg13
+FROM film;
