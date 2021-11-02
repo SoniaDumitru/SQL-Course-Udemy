@@ -34,3 +34,8 @@ SELECT first_name, last_name FROM customer as c
 INNER JOIN payment AS p
 ON c.customer_id = p.customer_id
 AND p.amount > 11;
+
+-- GROUP_CONCAT() function returns a string with concatenated results 
+SELECT id, GROUP_CONCAT(CONCAT_WS('x', id, quantity)) FROM items 
+GROUP BY quantity 
+LIMIT 100;
