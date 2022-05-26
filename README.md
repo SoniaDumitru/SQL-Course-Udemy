@@ -4,3 +4,14 @@
 Can I automatically create a table in PostgreSQL from a csv file with headers?
 
 https://stackoverflow.com/questions/21018256/can-i-automatically-create-a-table-in-postgresql-from-a-csv-file-with-headers 
+
+
+# Special mySql permissions:
+```
+$ mysql -u root
+$ show databases;
+$ use whiplash_tests;
+$ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+$ use whiplash_development;
+$ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+```
