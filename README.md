@@ -10,8 +10,8 @@ https://stackoverflow.com/questions/21018256/can-i-automatically-create-a-table-
 ```
 $ mysql -u root
 $ show databases;
-$ use whiplash_tests;
+$ use your_db_name;
 $ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
-$ use whiplash_development;
+$ use your_db_name;
 $ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 ```
